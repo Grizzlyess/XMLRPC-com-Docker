@@ -1,0 +1,16 @@
+services:
+
+  server:
+    build: ./server          
+    container_name: maria-clara
+    ports:
+      - "8000:8000"        
+
+  client:
+    build: ./client          
+    container_name: client-clara 
+    depends_on:
+      - server            
+    stdin_open: true       
+    tty: true              
+   
